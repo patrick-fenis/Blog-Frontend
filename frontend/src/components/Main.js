@@ -5,8 +5,8 @@ import Show from "../pages/Show"
 import New from "../pages/New"
 import Edit from "../pages/Edit"
 
-const URL = "http://localhost:4000/blogs"
-// const URL = "https://blog-99.herokuapp.com/blogs"
+// const URL = "http://localhost:4000/blogs"
+const URL = "https://blog-99.herokuapp.com/blogs"
 
 const Main = (props) => {
   const [blogs, setBlogs] = useState(null)

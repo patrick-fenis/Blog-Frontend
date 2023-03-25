@@ -12,18 +12,19 @@ const Show = (props) => {
   }
 
   return (
-    <div className="blog">
+    <div id="blog-show">
       <h1>{blog.title}</h1>
       <p>{blog.description}</p>
-      {props.image ? 
-      <img src={blog.image} alt={blog.title} />
-      : <h1></h1>}
+      {props.image === "" ? <h1></h1>
+      : <img src={blog.image} alt={blog.title} /> }
+      <br />
       <button id="delete" onClick={handleDelete}>
         Delete
       </button>
       <Link to={`/blogs/${id}/edit`}>
         <button id="edit">Edit Blog</button>
       </Link>
+      <h3>Comments:</h3>
     </div>
   )
 }

@@ -20,9 +20,6 @@ const Index = (props) => {
           <Link to={`/blogs/${blog._id}`}>
             <h1>{blog.title}</h1>
           </Link>
-          {props.image ? 
-            <img src={blog.image} alt={blog.title} />
-          : <h1>No Image</h1> }
           
         </div>
       ))

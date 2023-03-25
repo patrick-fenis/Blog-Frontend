@@ -23,31 +23,37 @@ const Edit = (props) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <section id="edit-page">
+      <h1>Edit Blog</h1>
+      <form onSubmit={handleSubmit}>
+      <label for="title">Title: </label>
       <input 
         type="text" 
         value={editForm.title} 
         name="title"
         placeholder="title"
         onChange={handleChange}
-        />
+        /> <br />
+      <label for="description">Description: </label>
       <input 
         type="text" 
         value={editForm.description} 
         name="description"
         placeholder="description"
         onChange={handleChange}
-        />
+        /> <br />
+      <label for="image">Image: </label>
       <input 
         type="text" 
         value={editForm.image} 
         name="image"
         placeholder="image"
         onChange={handleChange}
-        />
+        /> <br />
         <input type="submit" value="Edit Blog" />
-      
-    </form>
+      </form> 
+    </section>
+    
   )
 }
 
