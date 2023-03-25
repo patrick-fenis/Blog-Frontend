@@ -8,6 +8,8 @@ Backend: https://blog-99.herokuapp.com/blogs
 # Wireframes
 
 Before starting this application, we decided to create a wireframe or layout of the website to get an idea of what we should do
+
+
 <img width="490" alt="Screenshot 2023-03-14 at 4 01 43 PM" src="https://user-images.githubusercontent.com/117792341/227722281-1b7df3bf-f9c1-41bb-b98c-e332b336695b.png">
 
 
