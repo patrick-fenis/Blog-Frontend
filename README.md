@@ -13,4 +13,8 @@ Before starting this application, we decided to create a wireframe or layout of 
 <img width="490" alt="Screenshot 2023-03-14 at 4 01 43 PM" src="https://user-images.githubusercontent.com/117792341/227722281-1b7df3bf-f9c1-41bb-b98c-e332b336695b.png">
 
 
+# Improvements
+We are planning to improve the styling of this application later down the road as well as have users be able to create accounts, access their profiles, and be able to like and comment other people's blogs. 
+
+
 
