@@ -2,8 +2,10 @@ import { useState, useEffect } from "react"
 import { Route, Routes } from "react-router-dom"
 import Index from "../pages/Index"
 import Show from "../pages/Show"
+import New from "../pages/New"
 
-const URL = "http://localhost:4000/blogs"
+// const URL = "http://localhost:4000/blogs"
+const URL = "https://blog-99.herokuapp.com/blogs"
 
 const Main = (props) => {
   const [blogs, setBlogs] = useState(null)
@@ -41,11 +43,14 @@ const Main = (props) => {
     <main>
       <Routes>
         <Route path="/" element={
-          <Index 
-            blogs={blogs} 
-            createBlogs={createBlogs} />
+          <Index blogs={blogs} />
         } />
 
+        <Route path="/blogs/new" element={
+          <New
+            blogs={blogs}
+            createBlogs={createBlogs} />
+        } />
         <Route path="/blogs/:id" element={
           <Show 
               blogs={blogs}
