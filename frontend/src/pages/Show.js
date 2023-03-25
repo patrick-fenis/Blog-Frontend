@@ -1,30 +1,14 @@
-import { useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
-
+import { Link } from "react-router-dom"
 const Show = (props) => {
   const {id} = useParams()
   const navigate = useNavigate()
   const blogs = props.blogs
   const blog = blogs.find((b) => b._id === id)
 
-  // const [editForm, setEditForm] = useState(blog)
-
-  // const handleChange = (e) => {
-  //   setEditForm(prev => ({
-  //     ...prev,
-  //     [e.target.title]: e.target.value
-  //   }))
-  // }
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault()
-  //   props.updateBlogss(editForm, id)
-  //   navigate("/")
-  // }
-
   const handleDelete = () => {
     props.deleteBlogs(id)
-    navigate("/")
+    navigate("/blogs")
   }
 
   return (
@@ -37,6 +21,9 @@ const Show = (props) => {
       <button id="delete" onClick={handleDelete}>
         Delete
       </button>
+      <Link to={`/blogs/${id}/edit`}>
+        <button id="edit">Edit Blog</button>
+      </Link>
     </div>
   )
 }

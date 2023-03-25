@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom"
 import Index from "../pages/Index"
 import Show from "../pages/Show"
 import New from "../pages/New"
+import Edit from "../pages/Edit"
 
 // const URL = "http://localhost:4000/blogs"
 const URL = "https://blog-99.herokuapp.com/blogs"
@@ -16,7 +17,7 @@ const Main = (props) => {
     setBlogs(data)
   }
 
-  // new blogs method
+  // Create New Blogs Function
   const createBlogs = async (blog) => {
     await fetch(URL, {
       method: "post",
@@ -24,6 +25,19 @@ const Main = (props) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(blog),
+    })
+    getBlogs()
+  }
+
+  // Update Blogs Function
+
+  const updateBlogs = async (blog, id) => {
+    await fetch(`${URL}/${id}`, {
+      method: "put",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(blog)
     })
     getBlogs()
   }
@@ -42,7 +56,7 @@ const Main = (props) => {
   return (
     <main>
       <Routes>
-        <Route path="/" element={
+        <Route path="/blogs" element={
           <Index blogs={blogs} />
         } />
 
@@ -54,8 +68,13 @@ const Main = (props) => {
         <Route path="/blogs/:id" element={
           <Show 
               blogs={blogs}
-              deleteBlogs={deleteBlogs}
-           />
+              deleteBlogs={deleteBlogs} />
+        } />
+
+        <Route path="/blogs/:id/edit" element={
+          <Edit
+            blogs={blogs}
+            updateBlogs={updateBlogs} />
         } />
 
       </Routes>
