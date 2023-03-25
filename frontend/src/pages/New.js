@@ -1,6 +1,9 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"
 
 const New = (props) => {
+  const navigate = useNavigate()
+
   const [newForm, setNewForm] = useState({
     title: "",
     description: "",
@@ -8,22 +11,26 @@ const New = (props) => {
   })
 
   const handleChange = (e) => {
-    console.log(e.target)
+    // console.log(e.target)
     setNewForm((prev) => ({
       ...prev, 
-      [e.target.title]: e.target.value
+      [e.target.name]: e.target.value
     }))
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
     props.createBlogs(newForm)
+    console.log(newForm)
     setNewForm({
       title: "",
       description: "",
       image: ""
     })
+    navigate("/blogs")
   }
+
+
 
   return (
     <section>

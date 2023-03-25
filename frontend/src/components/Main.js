@@ -5,8 +5,8 @@ import Show from "../pages/Show"
 import New from "../pages/New"
 import Edit from "../pages/Edit"
 
-// const URL = "http://localhost:4000/blogs"
-const URL = "https://blog-99.herokuapp.com/blogs"
+const URL = "http://localhost:4000/blogs"
+// const URL = "https://blog-99.herokuapp.com/blogs"
 
 const Main = (props) => {
   const [blogs, setBlogs] = useState(null)
@@ -19,7 +19,7 @@ const Main = (props) => {
 
   // Create New Blogs Function
   const createBlogs = async (blog) => {
-    await fetch(URL, {
+    await fetch(`${URL}/new`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -30,7 +30,6 @@ const Main = (props) => {
   }
 
   // Update Blogs Function
-
   const updateBlogs = async (blog, id) => {
     await fetch(`${URL}/${id}`, {
       method: "put",

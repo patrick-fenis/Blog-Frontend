@@ -12,7 +12,7 @@ const Edit = (props) => {
   const handleChange = (e) => {
     setEditForm(prev => ({
       ...prev,
-      [e.target.title]: e.target.value
+      [e.target.name]: e.target.value
     }))
   }
 
