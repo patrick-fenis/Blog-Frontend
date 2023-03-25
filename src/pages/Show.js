@@ -15,6 +15,7 @@ const Show = (props) => {
     <div id="blog-show">
       <h1>{blog.title}</h1>
       <p>{blog.description}</p>
+      {/* eslint-disable-next-line */}
       {props.image === "" ? <h1></h1>
       : <img src={blog.image} alt={blog.title} /> }
       <br />
